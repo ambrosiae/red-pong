@@ -1,10 +1,13 @@
 import './styles/game.css';
-import Game from './partials/Game'
+import Game from './partials/Game';
 
-// create a game instance
-const game = new Game('game', 512, 256);
+//create game
+
+const game = new Game('game', 1024, 512);
 
 (function gameLoop() {
-    game.render();
-    requestAnimationFrame(gameLoop);
+  game.render();
+  requestAnimationFrame(gameLoop); //optimized to refresh with framerate; don't want to keep animating when user isn't using the tab
+  
 })();
+
